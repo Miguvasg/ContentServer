@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Descarga de archivos{% endblock %}
+{% block content %}
+<h1>lista de archivos</h1>
+{% for file in object_list %}
+    <a href="{{ file.docfile.url }}" download>{{ file.name }}</a>
+{% endfor %}
+{% endblock %}
