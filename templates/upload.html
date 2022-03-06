@@ -2,10 +2,32 @@
 {% load static %}
 {% block title %}Carga de archivos{% endblock %}
 {% block content %}
+<h1>Cargar archivos</h1>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <input type="text" placeholder="nombre del archivo..." name="file_name">
-    <input type="file" value="upload_file" name="upload_file">
-    <button type="submit">Cargar</button>
+    <input type="text"
+           placeholder="nombre del archivo..."
+           name="file_name"
+           minlength="5"
+           maxlength="50"
+           required="required"
+           pattern="[A-Za-z0-9_ ]{5,50}"
+           autocomplete="off"
+    >
+    <input type="file"
+           value="upload_file"
+           name="upload_file"
+           class="inputfile"
+           id="upload_file"      
+    >
+    <label for="upload_file" class="file_name_label">Selecciona un archivo</label>
+    <p id="file_name">Archivo a subir:</p>
+    <button type="submit" class="submit">Cargar</button>
 </form>
+<script>
+    document.getElementById('upload_file').onchange = function () {
+        var fileName = this.value.replace('C:\\fakepath\\', '')
+        document.getElementById('file_name').innerText = 'Archivo a subir: ' + fileName
+    }
+</script>
 {% endblock %}

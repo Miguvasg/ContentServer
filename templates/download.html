@@ -4,6 +4,8 @@
 {% block content %}
 <h1>lista de archivos</h1>
 {% for file in object_list %}
-    <a href="{{ file.docfile.url }}" download>{{ file.name }}</a>
+<div class="file_container">
+    <a class="filelist" href="{{ file.docfile.url }}" download>{{ file.name }} ({{ file.size }} bytes)</a>
+</div>
 {% endfor %}
 {% endblock %}

@@ -5,6 +5,121 @@
 }
 
 html {
-    background-color: #d2d5db;
+    background-color: #f2f2f2;
+    font-family: 'Open Sans', sans-serif;
 }
 
+header {
+    background-color: #fff;
+    height: 80px;
+    display: flex;
+}
+
+header > img {
+    height: 80px;
+    margin: 0 20px 0 20px;
+}
+
+header > a {
+    color: #666666;
+    height: 80px;
+    width: 80px;
+    margin: 0 20px 0 20px;   
+    text-align: center;
+    padding-top: 30px;
+    border-bottom: 5px solid #fff;
+    text-decoration: none;
+}
+
+header > a:hover {
+    border-bottom: 3px solid #035a76;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input {
+    margin: 10px;
+}
+
+input[type=text] {
+    width: 400px;
+    height: 40px;
+    padding: 5px;
+    outline: none;
+}
+
+input:focus {
+    border: 1px solid #008CBA;
+}
+
+.submit {
+    margin-left: 10px;
+    background-color: #008CBA;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+.submit:hover {
+    background-color: #00bfff;
+    cursor: pointer;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    width: 200px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+.file_name_label:hover {
+    color: #008CBA;
+}
+
+#file_name {
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.file_container {
+    display: block;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.filelist {   
+    text-decoration: none;
+    color: #666666;
+}
+
+.filelist:hover {
+    color: #008CBA;
+}

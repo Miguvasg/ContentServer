@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.urls import path
 from django.conf import settings
-from filemanage.views import UploadView, DownloadListView
+from filemanage.views import UploadView, DownloadListView, IndexView
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('', IndexView.as_view(), name='index'),
     path('upload/', UploadView.as_view(), name='upload'),
     path('download/', DownloadListView.as_view(), name='download'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
